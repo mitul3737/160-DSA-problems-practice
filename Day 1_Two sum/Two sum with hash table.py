@@ -1,3 +1,4 @@
+#Time complexity O(n) ; space complexity O(n)
 class Solution(object):
     def twoNumberSum(self,array, target):
         self.code_array=array

@@ -1,4 +1,5 @@
 ###Problem link: https://leetcode.com/problems/two-sum/
+#Time complexity O(n) ; space complexity O(n)
 class Solution(object):
     def twoNumberSum(self,array, target):
         self.code_array=array
@@ -15,14 +16,21 @@ class Solution(object):
             if self.remaining in self.hash_table.keys() and (self.hash_table[self.remaining]!=self.index): #to check enequal
                 #print("Entered")
                 ###(self.hash_table[self.remaining]!=self.index) here we checked if the remaining value's index and values index are same or not. If same, we won't take it. It means , we will avoid repeatation.
-                return [self.hash_table[self.remaining],self.index] #self.index is the last index and it was incrementted . So, no need to increment.
+                return f"{self.hash_table[self.remaining]+1} {self.index+1}" #+1 because they wanted the position, not the index
+                #self.index is the last index and it was incrementted . So, no need to increment.
             else:
                 self.hash_table[value]= self.index  
                 self.index+=1
-        return []
+        return -1 #as mentioned in the code
+
+val=input("").split(" ")
+len_arr=int(val[0])
+target=int(val[1])
+arr=input("").split(" ")
+array=[]
+for i in arr:
+    array.append(int(i))
 
 
-array=array=[3,3]
-target=6
 abj=Solution()
 print(abj.twoNumberSum(array,target))
